@@ -7,10 +7,11 @@
 
 body {
     font-family: 'Vazirmatn', sans-serif;
-    background: #f4f7fa;
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); /* دو رنگ: آبی روشن به آبی آسمانی */
     color: #333;
     line-height: 1.7;
     direction: rtl;
+    min-height: 100vh; /* برای پوشش کامل صفحه */
 }
 
 .container {
@@ -19,7 +20,8 @@ body {
     background: #fff;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .header {
@@ -36,9 +38,9 @@ body {
 }
 
 .title {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 12px;
+     font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 12px;
 }
 
 .contact {
