@@ -1,58 +1,261 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title> سجاد وحدت - رزومه </title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سجاد وحدت - رزومه</title>
+
+  <!-- Bootstrap 4 RTL + CSS + JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.rtl.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- فونت Vazirmatn -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3498db;
+      --dark: #2c3e50;
+      --light: #f8f9fa;
+      --gray: #95a5a6;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      color: #333;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+      border-bottom: 2px solid #e0e0e0;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .card-header h1 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      margin: 0;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      margin: 0.5rem 0;
+    }
+
+    .contact a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      border-right: 4px solid var(--primary);
+      padding-right: 0.75rem;
+    }
+
+    .university {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .date {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .github-box {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .github-link {
+      font-weight: bold;
+      color: #24292e;
+      font-family: monospace;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .github-link:hover {
+      color: #0366d6;
+      text-decoration: underline;
+    }
+
+    /* Progress Bar */
+    .progress {
+      height: 1.2rem;
+      margin-bottom: 0.75rem;
+      border-radius: 6px;
+    }
+
+    .progress-bar {
+      background-color: var(--primary);
+    }
+
+    /* Modal */
+    .modal-header {
+      border-bottom: none;
+    }
+
+    .modal-title {
+      color: var(--dark);
+    }
+
+    @media (max-width: 768px) {
+      .card-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- 1. Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-        <!-- هدر -->
-        <header class="header">
-            <h1>سجاد وحدت </h1>
+      <a class="navbar-brand font-weight-bold" href="#">سجاد وحدت</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#summary">خلاصه</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">تحصیلات</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">مهارت‌ها</a></li>
+          <li class="nav-item"><a class="nav-link" href="#github">گیت‌هاب</a></li>
+          <li class="nav-item">
+            <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#contactModal">
+              تماس با من
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Container + Row + Col -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-xl-9">
+
+        <!-- 3. Card -->
+        <div class="card">
+
+          <!-- Card Header -->
+          <div class="card-header">
+            <h1>سجاد وحدت</h1>
             <p class="title">مهندس امنیت سایبری</p>
             <div class="contact">
-                <a href="mailto:vahdatsajad6@gmail.com">vahdatsajad6@gmail.com</a> |
-                <a href="tel:+989113998523">09113998523</a> |
-                <a href="https://github.com/sajad007" target="_blank">github.com/sajad007</a> |    
+              <a href="mailto:vahdatsajad6@gmail.com">vahdatsajad6@gmail.com</a> |
+              <a href="tel:+989113998523">09113998523</a> |
+              <a href="https://github.com/sajad007" target="_blank">github.com/sajad007</a>
             </div>
-        </header>
+          </div>
 
-        <!-- خلاصه -->
-        <section class="section">
-            <h2>خلاصه</h2>
-            <p>
-                علاقمند به یادگیری امنیت سایبری
-            </p>
-        </section>
+          <div class="card-body">
 
-        <!-- تحصیلات -->
-        <section class="section">
-            <h2>تحصیلات</h2>
-            <div class="education">
+            <!-- خلاصه -->
+            <section id="summary" class="mb-4">
+              <h2 class="section-title">خلاصه</h2>
+              <p>علاقمند به یادگیری امنیت سایبری</p>
+            </section>
+
+            <!-- تحصیلات -->
+            <section id="education" class="mb-4">
+              <h2 class="section-title">تحصیلات</h2>
+              <div>
                 <h3>کارشناسی مهندسی کامپیوتر</h3>
                 <p class="university">دانشگاه آزاد قزوین</p>
                 <p class="date">1404 - 1408</p>
-            </div>
-        </section>
+              </div>
+            </section>
 
-        <!-- لینک GitHub -->
-        <section class="section github">
-            <h2>پروژه‌های GitHub</h2>
-            <p>
-                تمامی پروژه‌های من در 
+            <!-- مهارت‌ها + Progress Bar -->
+            <section id="skills" class="mb-4">
+              <h2 class="section-title">مهارت‌ها</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <strong>پایتون</strong>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <strong>لینوکس</strong>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- گیت‌هاب -->
+            <section id="github">
+              <h2 class="section-title">پروژه‌های GitHub</h2>
+              <p>
+                تمامی پروژه‌های من در
                 <a href="https://github.com/sajad007" target="_blank" class="github-link">
-                    github.com/sajadv007        
-                </a> 
+                  github.com/sajad007
+                </a>
                 قابل مشاهده است.
-            </p>
-        </section>
+              </p>
+              <div class="github-box mt-3">
+                <p>برای مشاهده پروژه‌ها کلیک کنید ↑</p>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
+
+  <!-- 4. Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">تماس با من</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body text-center">
+          <p><strong>ایمیل:</strong> vahdatsajad6@gmail.com</p>
+          <p><strong>تلفن:</strong> 09113998523</p>
+          <p><strong>گیت‌هاب:</strong> <a href="https://github.com/sajad007" target="_blank">sajad007</a></p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">بستن</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
-
 </html>
-
-
-
