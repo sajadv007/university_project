@@ -4,191 +4,160 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>سجاد وحدت - رزومه</title>
-  <!-- Bootstrap 4 RTL + CSS + JS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.rtl.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- فونت Vazirmatn -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN (v3.4+) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- فونت وزیرمتن -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    :root {
-      --primary: #3498db;
-      --dark: #2c3e50;
-      --light: #f8f9fa;
-      --gray: #95a5a6;
-      --progress-bg: #e9ecef;
-      --progress-fill: #3498db;
+    body { font-family: 'Vazirmatn', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+    .skill-bar { transition: all 0.6s ease-out; }
+    .skill-bar:hover { transform: translateX(-4px); }
+    .profile-img { 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: all 0.3s;
     }
-    body {
-      font-family: 'Vazirmatn', sans-serif;
-      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-      color: #333;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-    .navbar { box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
-    .card { border: none; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow: hidden; }
-    .card-header { background: linear-gradient(to bottom, #f8f9fa, #ffffff); border-bottom: 2px solid #e0e0e0; text-align: center; padding: 1.5rem; }
-    .card-header h1 { font-size: 2.5rem; color: var(--dark); margin: 0; }
-    .title { font-size: 1.2rem; color: #7f8c8d; margin: 0.5rem 0; }
-    .contact a { color: var(--primary); text-decoration: none; }
-    .contact a:hover { text-decoration: underline; }
-    .section-title { font-size: 1.6rem; color: var(--dark); margin-bottom: 1rem; border-right: 4px solid var(--primary); padding-right: 0.75rem; }
-    .university { color: var(--primary); font-weight: 500; }
-    .date { font-size: 0.9rem; color: var(--gray); }
-    .github-box { background: #f8f9fa; padding: 1rem; border-radius: 8px; text-align: center; }
-    .github-link { font-weight: bold; color: #24292e; font-family: monospace; font-size: 1.1rem; text-decoration: none; }
-    .github-link:hover { color: #0366d6; text-decoration: underline; }
-    /* Progress Bar */
-    .progress {
-      height: 0.8rem;
-      margin-bottom: 0.6rem;
-      border-radius: 6px;
-      background-color: var(--progress-bg);
-    }
-    .progress-bar {
-      background-color: var(--progress-fill);
-      color: #fff;
-      font-size: 0.7rem;
-      line-height: 1.2;
-      text-align: center;
-    }
-    .modal-header { border-bottom: none; }
-    .modal-title { color: var(--dark); }
-    
-    /* استایل عکس پروفایل */
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .card-header h1 { font-size: 2rem; }
-      .profile-img { width: 100px; height: 100px; }
-    }
+    .profile-img:hover { transform: scale(1.05); }
   </style>
 </head>
-<body>
+<body class="min-h-screen gradient-bg">
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container">
-      <a class="navbar-brand font-weight-bold" href="#">سجاد وحدت</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#summary">خلاصه</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">تحصیلات</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">مهارت‌ها</a></li>
-          <li class="nav-item"><a class="nav-link" href="#github">گیت‌هاب</a></li>
-          <li class="nav-item">
-            <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#contactModal">
-              تماس با من
-            </button>
-          </li>
-        </ul>
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold text-gray-800">سجاد وحدت</div>
+        <div class="hidden md:flex items-center space-x-reverse space-x-8">
+          <a href="#summary" class="text-gray-700 hover:text-blue-600 transition">خلاصه</a>
+          <a href="#education" class="text-gray-700 hover:text-blue-600 transition">تحصیلات</a>
+          <a href="#skills" class="text-gray-700 hover:text-blue-600 transition">مهارت‌ها</a>
+          <a href="#github" class="text-gray-700 hover:text-blue-600 transition">گیت‌هاب</a>
+          <button onclick="document.getElementById('contactModal').classList.remove('hidden')" 
+                  class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition shadow-md">
+            تماس با من
+          </button>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button onclick="this.nextElementSibling.classList.toggle('hidden')">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <div class="hidden absolute top-16 left-0 right-0 bg-white shadow-lg rounded-b-xl p-4 space-y-4">
+            <a href="#summary" class="block hover:text-blue-600">خلاصه</a>
+            <a href="#education" class="block hover:text-blue-600">تحصیلات</a>
+            <a href="#skills" class="block hover:text-blue-600">مهارت‌ها</a>
+            <a href="#github" class="block hover:text-blue-600">گیت‌هاب</a>
+            <button class="w-full bg-blue-600 text-white py-2 rounded-lg">تماس با من</button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- Main Content -->
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 col-xl-9">
-        <div class="card">
-          <div class="card-header">
-            <!-- عکس پروفایل دایره‌ای -->
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExMWFh
-            ... (Base64 کامل عکس شما) ...
-            ZI4hKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPOeKPO
-            " alt="سجاد وحدت" class="profile-img">
-            
-            <h1>سجاد وحدت</h1>
-            <p class="title">مهندس امنیت سایبری آینده</p>
-            <div class="contact">
-              <a href="mailto:vahdatsajad6@gmail.com">vahdatsajad6@gmail.com</a> |
-              <a href="tel:+989113998523">09113998523</a> |
-              <a href="https://github.com/sajadv007" target="_blank">github.com/sajadv007</a>
-            </div>
-          </div>
-          <div class="card-body">
-            <!-- خلاصه -->
-            <section id="summary" class="mb-4">
-              <h2 class="section-title">خلاصه</h2>
-              <p>علاقمند به یادگیری امنیت سایبری</p>
-            </section>
-            <!-- تحصیلات -->
-            <section id="education" class="mb-4">
-              <h2 class="section-title">تحصیلات</h2>
-              <div>
-                <h3>کارشناسی مهندسی کامپیوتر</h3>
-                <p class="university">دانشگاه آزاد قزوین</p>
-                <p class="date">1404 - 1408</p>
-              </div>
-            </section>
-            <!-- مهارت‌ها -->
-            <section id="skills" class="mb-4">
-              <h2 class="section-title">مهارت‌ها</h2>
-              <div class="row">
-                <div class="col-md-6">
-                  <strong>پایتون</strong>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <strong>لینوکس</strong>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 5%;" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5%</div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- گیت‌هاب -->
-            <section id="github">
-              <h2 class="section-title">پروژه‌های GitHub</h2>
-              <p>
-                تمامی پروژه‌های من در
-                <a href="https://github.com/sajadv007" target="_blank" class="github-link">
-                  github.com/sajadv007
-                </a>
-                قابل مشاهده است.
-              </p>
-              <div class="github-box mt-3">
-                <p>برای مشاهده پروژه‌ها کلیک کنید</p>
-              </div>
-            </section>
-          </div>
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-b from-gray-50 to-white p-10 text-center">
+        <img src="https://freeimage.host/i/fBMH5as" 
+             alt="سجاد وحدت" 
+             class="profile-img w-32 h-32 rounded-full mx-auto border-4 border-white object-cover">
+        <h1 class="text-4xl font-extrabold text-gray-800 mt-6">سجاد وحدت</h1>
+        <p class="text-xl text-blue-600 font-semibold mt-2">مهندس امنیت سایبری آینده</p>
+        <div class="flex justify-center gap-6 mt-6 text-gray-600">
+          <a href="mailto:vahdatsajad6@gmail.com" class="hover:text-blue-600 transition">vahdatsajad6@gmail.com</a>
+          <span>|</span>
+          <a href="tel:+989113998523" class="hover:text-blue-600 transition">09113998523</a>
+          <span>|</span>
+          <a href="https://github.com/sajadv007" target="_blank" class="hover:text-blue-600 transition">github.com/sajadv007</a>
         </div>
       </div>
+
+      <div class="p-10 space-y-12">
+        <!-- خلاصه -->
+        <section id="summary">
+          <h2 class="text-2xl font-bold text-gray-800 border-r-4 border-blue-600 pr-4">خلاصه</h2>
+          <p class="mt-4 text-lg text-gray-700 leading-relaxed">
+            دانشجوی پرشور مهندسی کامپیوتر با علاقه شدید به حوزه امنیت سایبری. 
+            در حال یادگیری عمیق مفاهیم Penetration Testing، Cryptography و Defensive Security. 
+            همیشه در جستجوی چالش‌های جدید و پروژه‌های واقعی.
+          </p>
+        </section>
+
+        <!-- تحصیلات -->
+        <section id="education">
+          <h2 class="text-2xl font-bold text-gray-800 border-r-4 border-blue-600 pr-4">تحصیلات</h2>
+          <div class="mt-6 bg-gray-50 rounded-xl p-6 border-r-4 border-blue-500">
+            <h3 class="text-xl font-bold text-gray-800">کارشناسی مهندسی کامپیوتر</h3>
+            <p class="text-blue-600 font-semibold">دانشگاه آزاد اسلامی واحد قزوین</p>
+            <p class="text-gray-500 mt-1">1404 – 1408 (در حال تحصیل)</p>
+          </div>
+        </section>
+
+        <!-- مهارت‌ها -->
+        <section id="skills">
+          <h2 class="text-2xl font-bold text-gray-800 border-r-4 border-blue-600 pr-4">مهارت‌ها</h2>
+          <div class="mt-8 space-y-6">
+            <div class="skill-bar">
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold">پایتون (Python)</span>
+                <span class="text-blue-600 font-bold">20%</span>
+              </div>
+              <div class="bg-gray-200 rounded-full h-4 overflow-hidden">
+                <div class="bg-blue-600 h-full rounded-full transition-all duration-1000 ease-out" style="width: 20%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <div class="flex justify-between mb-2">
+                <span class="font-semibold">لینوکس (Linux)</span>
+                <span class="text-blue-600 font-bold">5%</span>
+              </div>
+              <div class="bg-gray-200 rounded-full h-4 overflow-hidden">
+                <div class="bg-blue-600 h-full rounded-full transition-all duration-1000 ease-out" style="width: 5%"></div>
+              </div>
+            </div>
+            <!-- می‌تونی بعداً مهارت‌های جدید اضافه کنی -->
+          </div>
+        </section>
+
+        <!-- گیت‌هاب -->
+        <section id="github">
+          <h2 class="text-2xl font-bold text-gray-800 border-r-4 border-blue-600 pr-4">پروژه‌های گیت‌هاب</h2>
+          <div class="mt-6 text-center">
+            <p class="text-lg text-gray-700 mb-6">
+              تمام پروژه‌ها، اسکریپت‌ها و تمرین‌های من رو می‌تونی اینجا ببینی:
+            </p>
+            <a href="https://github.com/sajadv007" target="_blank"
+               class="inline-block bg-gray-900 text-white px-8 py-4 rounded-xl text-xl font-mono hover:bg-gray-800 transition shadow-xl">
+              github.com/sajadv007
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+      <h3 class="text-2xl font-bold text-center mb-6">تماس با من</h3>
+      <div class="space-y-4 text-lg">
+        <p><strong>ایمیل:</strong> vahdatsajad6@gmail.com</p>
+        <p><strong>تلفن:</strong> 09113998523</p>
+        <p><strong>گیت‌هاب:</strong> <a href="https://github.com/sajadv007" target="_blank" class="text-blue-600 hover:underline">sajadv007</a></p>
+      </div>
+      <button onclick="document.getElementById('contactModal').classList.add('hidden')"
+              class="mt-8 w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+        بستن
+      </button>
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="contactModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">تماس با من</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body text-center">
-          <p><strong>ایمیل:</strong> vahdatsajad6@gmail.com</p>
-          <p><strong>تلفن:</strong> 09113998523</p>
-          <p><strong>گیت‌هاب:</strong> <a href="https://github.com/sajadv007" target="_blank">sajadv007</a></p>
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">بستن</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
